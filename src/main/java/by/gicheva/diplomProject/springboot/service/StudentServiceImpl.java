@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Margarita Gicheva on 03.05.2017.
  */
-@Service("studentService")
+@Service("StudentService")
 @Transactional
 public class StudentServiceImpl implements StudentService{
     @Autowired
