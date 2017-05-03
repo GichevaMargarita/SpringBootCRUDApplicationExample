@@ -1,4 +1,4 @@
-package com.websystique.springboot.controller;
+package by.gicheva.diplomProject.springboot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

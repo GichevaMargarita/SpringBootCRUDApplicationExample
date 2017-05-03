@@ -1,4 +1,4 @@
-package com.websystique.springboot.util;
+package by.gicheva.diplomProject.springboot.util;
 
 
 public class CustomErrorType {

@@ -1,6 +1,6 @@
-package com.websystique.springboot.repositories;
+package by.gicheva.diplomProject.springboot.repositories;
 
-import com.websystique.springboot.model.User;
+import by.gicheva.diplomProject.springboot.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,7 +1,8 @@
-package com.websystique.springboot.controller;
+package by.gicheva.diplomProject.springboot.controller;
 
 import java.util.List;
 
+import by.gicheva.diplomProject.springboot.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.websystique.springboot.model.User;
-import com.websystique.springboot.service.UserService;
-import com.websystique.springboot.util.CustomErrorType;
+import by.gicheva.diplomProject.springboot.service.UserService;
+import by.gicheva.diplomProject.springboot.util.CustomErrorType;
 
 @RestController
 @RequestMapping("/api")

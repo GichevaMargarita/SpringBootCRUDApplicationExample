@@ -1,7 +1,7 @@
-package com.websystique.springboot.service;
+package by.gicheva.diplomProject.springboot.service;
 
 
-import com.websystique.springboot.model.User;
+import by.gicheva.diplomProject.springboot.model.User;
 
 import java.util.List;
 
