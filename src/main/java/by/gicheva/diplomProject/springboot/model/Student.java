@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class Student implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @NotEmpty
     @Column(name="studentFirstName", nullable=false)
     private String firstName;
@@ -25,11 +25,11 @@ public class Student implements Serializable {
     @Column(name="studentIdGroup", nullable=false)
     private Integer idGroup;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -72,10 +72,10 @@ public class Student implements Serializable {
 
     @Override
     public int hashCode() {
-        int result = id;
+        int result = id != null ? id.hashCode() : 0;
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + idGroup;
+        result = 31 * result + (idGroup != null ? idGroup.hashCode() : 0);
         return result;
     }
 
