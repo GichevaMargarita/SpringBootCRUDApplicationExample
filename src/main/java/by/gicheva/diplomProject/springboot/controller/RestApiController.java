@@ -48,7 +48,7 @@ public class RestApiController {
 
         if (studentService.isStudentExist(student)) {
             logger.error("Unable to create. A Student with name {} already exist", student.getName());
-            return new ResponseEntity(new CustomErrorType("Unable to create. A Student with name " +
+            return new ResponseEntity(new CustomErrorType("Unable to create. A Student with last name " +
                     student.getName() + " already exist."),HttpStatus.CONFLICT);
         }
         studentService.saveStudent(student);

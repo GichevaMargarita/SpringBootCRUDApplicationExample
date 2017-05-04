@@ -3,6 +3,7 @@ package by.gicheva.diplomProject.springboot.model;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -20,7 +21,7 @@ public class Student implements Serializable {
     @NotEmpty
     @Column(name="studentLastName", nullable=false)
     private String name;
-    @NotEmpty
+    @NotNull
     @Column(name="studentIdGroup", nullable=false)
     private Integer idGroup;
 
