@@ -1,7 +1,5 @@
-/**
- * Created by magi1016 on 03.05.2017.
- */
 'use strict';
+
 
 angular.module('crudApp').factory('StudentService',
     ['$localStorage', '$http', '$q', 'urls',
@@ -21,15 +19,15 @@ angular.module('crudApp').factory('StudentService',
             function loadAllStudents() {
                 console.log('Fetching all students');
                 var deferred = $q.defer();
-                $http.get(urls.STUDENT_SERVICE_API)
+                $http.get(urls.USER_SERVICE_API)
                     .then(
                         function (response) {
-                            console.log('Fetched successfully all students');
+                            console.log('Fetched successfully all Students');
                             $localStorage.students = response.data;
                             deferred.resolve(response);
                         },
                         function (errResponse) {
-                            console.error('Error while loading students');
+                            console.error('Error while loading Students');
                             deferred.reject(errResponse);
                         }
                     );
@@ -43,14 +41,14 @@ angular.module('crudApp').factory('StudentService',
             function getStudent(id) {
                 console.log('Fetching Student with id :'+id);
                 var deferred = $q.defer();
-                $http.get(urls.STUDENT_SERVICE_API + id)
+                $http.get(urls.USER_SERVICE_API + id)
                     .then(
                         function (response) {
                             console.log('Fetched successfully Student with id :'+id);
                             deferred.resolve(response.data);
                         },
                         function (errResponse) {
-                            console.error('Error while loading student with id :'+id);
+                            console.error('Error while loading users with id :'+id);
                             deferred.reject(errResponse);
                         }
                     );
@@ -60,7 +58,7 @@ angular.module('crudApp').factory('StudentService',
             function createStudent(student) {
                 console.log('Creating Student');
                 var deferred = $q.defer();
-                $http.post(urls.STUDENT_SERVICE_API, student)
+                $http.post(urls.USER_SERVICE_API, student)
                     .then(
                         function (response) {
                             loadAllStudents();
@@ -77,7 +75,7 @@ angular.module('crudApp').factory('StudentService',
             function updateStudent(student, id) {
                 console.log('Updating Student with id '+id);
                 var deferred = $q.defer();
-                $http.put(urls.STUDENT_SERVICE_API + id, student)
+                $http.put(urls.USER_SERVICE_API + id, student)
                     .then(
                         function (response) {
                             loadAllStudents();
@@ -94,7 +92,7 @@ angular.module('crudApp').factory('StudentService',
             function removeStudent(id) {
                 console.log('Removing Student with id '+id);
                 var deferred = $q.defer();
-                $http.delete(urls.STUDENT_SERVICE_API + id)
+                $http.delete(urls.USER_SERVICE_API + id)
                     .then(
                         function (response) {
                             loadAllStudents();

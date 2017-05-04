@@ -1,6 +1,3 @@
-/**
- * Created by magi1016 on 03.05.2017.
- */
 'use strict';
 
 angular.module('crudApp').controller('StudentController',
@@ -37,7 +34,7 @@ angular.module('crudApp').controller('StudentController',
         }
 
         function createStudent(student) {
-            console.log('About to create student');
+            console.log('About to create Student');
             StudentService.createStudent(student)
                 .then(
                     function (response) {
@@ -58,7 +55,7 @@ angular.module('crudApp').controller('StudentController',
 
 
         function updateStudent(student, id){
-            console.log('About to update student');
+            console.log('About to update Student');
             StudentService.updateStudent(student, id)
                 .then(
                     function (response){
@@ -85,7 +82,7 @@ angular.module('crudApp').controller('StudentController',
                         console.log('Student '+id + ' removed successfully');
                     },
                     function(errResponse){
-                        console.error('Error while removing student '+id +', Error :'+errResponse.data);
+                        console.error('Error while removing Student '+id +', Error :'+errResponse.data);
                     }
                 );
         }

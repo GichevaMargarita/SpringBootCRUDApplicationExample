@@ -3,36 +3,26 @@ package by.gicheva.diplomProject.springboot.model;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
- * Created by margo on 01.05.2017.
+ * Created by Margarita Gicheva on 04.05.2017.
  */
 @Entity
-@Table(name="STUDENT")
-public class Student {
-
+@Table(name="student")
+public class Student implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
     @NotEmpty
-    @Column(name="STUDENTFIRSTNAME", nullable=false)
+    @Column(name="studentFirstName", nullable=false)
     private String firstName;
     @NotEmpty
-    @Column(name="STUDENTLASTNAME", nullable=false)
-    private String lastName;
+    @Column(name="studentLastName", nullable=false)
+    private String name;
     @NotEmpty
-    @Column(name="STUDENTIDGROUP", nullable=false)
-    private int groupId;
-
-    public Student() {
-    }
-
-    public Student(int id, String firstName, String lastName, int groupId) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.groupId = groupId;
-    }
+    @Column(name="studentIdGroup", nullable=false)
+    private int idGroup;
 
     public int getId() {
         return id;
@@ -50,30 +40,20 @@ public class Student {
         this.firstName = firstName;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getName() {
+        return name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getGroupId() {
-        return groupId;
+    public int getIdGroup() {
+        return idGroup;
     }
 
-    public void setGroupId(int groupId) {
-        this.groupId = groupId;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + firstName + '\'' +
-                ", surname='" + lastName + '\'' +
-                ", group='" + groupId + '\'' +
-                '}';
+    public void setIdGroup(int idGroup) {
+        this.idGroup = idGroup;
     }
 
     @Override
@@ -84,17 +64,27 @@ public class Student {
         Student student = (Student) o;
 
         if (id != student.id) return false;
-        if (groupId != student.groupId) return false;
+        if (idGroup != student.idGroup) return false;
         if (firstName != null ? !firstName.equals(student.firstName) : student.firstName != null) return false;
-        return lastName != null ? lastName.equals(student.lastName) : student.lastName == null;
+        return name != null ? name.equals(student.name) : student.name == null;
     }
 
     @Override
     public int hashCode() {
         int result = id;
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-        result = 31 * result + groupId;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + idGroup;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" +  name + '\'' +
+                ", idGroup=" + idGroup +
+                '}';
     }
 }

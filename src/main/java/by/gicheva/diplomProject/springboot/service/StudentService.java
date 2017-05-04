@@ -5,16 +5,16 @@ import by.gicheva.diplomProject.springboot.model.Student;
 import java.util.List;
 
 /**
- * Created by Margarita Gicheva on 03.05.2017.
+ * Created by Margarita Gicheva on 04.05.2017.
  */
-public interface StudentService {
+public  interface StudentService {
     Student findById(Long id);
 
-    Student findByName(String lastName);
+    Student findByName(String name);
 
-    void saveStudent(Student Student);
+    void saveStudent(Student student);
 
-    void updateStudent(Student Student);
+    void updateStudent(Student student);
 
     void deleteStudentById(Long id);
 
@@ -22,5 +22,5 @@ public interface StudentService {
 
     List<Student> findAllStudents();
 
-    boolean isStudentExist(Student Student);
+    boolean isStudentExist(Student student);
 }

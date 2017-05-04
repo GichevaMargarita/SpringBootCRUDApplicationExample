@@ -9,11 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
- * Created by Margarita Gicheva on 03.05.2017.
+ * Created by Margarita Gicheva on 04.05.2017.
  */
 @Service("studentService")
 @Transactional
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
@@ -21,16 +21,16 @@ public class StudentServiceImpl implements StudentService{
         return studentRepository.findOne(id);
     }
 
-    public Student findByName(String lastName) {
-        return studentRepository.findByName(lastName);
+    public Student findByName(String name) {
+        return studentRepository.findByName(name);
     }
 
-    public void saveStudent(Student Student) {
-        studentRepository.save(Student);
+    public void saveStudent(Student student) {
+        studentRepository.save(student);
     }
 
-    public void updateStudent(Student Student){
-        saveStudent(Student);
+    public void updateStudent(Student student){
+        saveStudent(student);
     }
 
     public void deleteStudentById(Long id){
@@ -46,6 +46,6 @@ public class StudentServiceImpl implements StudentService{
     }
 
     public boolean isStudentExist(Student student) {
-        return findByName(student.getLastName()) != null;
+        return findByName(student.getName()) != null;
     }
 }
