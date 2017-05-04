@@ -64,9 +64,9 @@
 		            <tbody>
 		            <tr ng-repeat="u in ctrl.getAllStudents()">
 		                <td>{{u.id}}</td>
-		                <td>{{u.name}}</td>
-		                <td>{{u.age}}</td>
-		                <td>{{u.salary}}</td>
+		                <td>{{u.firstName}}</td>
+		                <td>{{u.lastName}}</td>
+		                <td>{{u.groupId}}</td>
 		                <td><button type="button" ng-click="ctrl.editUser(u.id)" class="btn btn-success custom-width">Edit</button></td>
 		                <td><button type="button" ng-click="ctrl.removeUser(u.id)" class="btn btn-danger custom-width">Remove</button></td>
 		            </tr>

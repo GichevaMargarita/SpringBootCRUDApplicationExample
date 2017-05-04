@@ -2,7 +2,7 @@ var app = angular.module('crudApp',['ui.router','ngStorage']);
 
 app.constant('urls', {
     BASE: 'http://localhost:8080/SpringBootCRUDApp',
-    USER_SERVICE_API : 'http://localhost:8080/SpringBootCRUDApp/api/user/'
+    STUDENT_SERVICE_API : 'http://localhost:8080/SpringBootCRUDApp/api/student/'
 });
 
 app.config(['$stateProvider', '$urlRouterProvider',
@@ -12,13 +12,13 @@ app.config(['$stateProvider', '$urlRouterProvider',
             .state('home', {
                 url: '/',
                 templateUrl: 'partials/list',
-                controller:'UserController',
+                controller:'StudentController',
                 controllerAs:'ctrl',
                 resolve: {
-                    users: function ($q, UserService) {
-                        console.log('Load all users');
+                    students: function ($q, StudentService) {
+                        console.log('Load all students');
                         var deferred = $q.defer();
-                        UserService.loadAllUsers().then(deferred.resolve, deferred.resolve);
+                        StudentService.loadAllStudents().then(deferred.resolve, deferred.resolve);
                         return deferred.promise;
                     }
                 }

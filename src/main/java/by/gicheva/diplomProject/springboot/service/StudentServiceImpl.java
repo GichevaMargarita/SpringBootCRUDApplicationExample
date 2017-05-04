@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Margarita Gicheva on 03.05.2017.
  */
-@Service("StudentService")
+@Service("studentService")
 @Transactional
 public class StudentServiceImpl implements StudentService{
     @Autowired
@@ -21,8 +21,8 @@ public class StudentServiceImpl implements StudentService{
         return studentRepository.findOne(id);
     }
 
-    public Student findByName(String firstName, String lastName) {
-        return studentRepository.findByName(firstName, lastName);
+    public Student findByName(String lastName) {
+        return studentRepository.findByName(lastName);
     }
 
     public void saveStudent(Student Student) {
@@ -46,6 +46,6 @@ public class StudentServiceImpl implements StudentService{
     }
 
     public boolean isStudentExist(Student student) {
-        return findByName(student.getFirstName(), student.getLastName()) != null;
+        return findByName(student.getLastName()) != null;
     }
 }

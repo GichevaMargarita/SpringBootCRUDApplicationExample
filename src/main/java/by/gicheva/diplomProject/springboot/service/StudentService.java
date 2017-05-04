@@ -10,7 +10,7 @@ import java.util.List;
 public interface StudentService {
     Student findById(Long id);
 
-    Student findByName(String firstName, String lastName);
+    Student findByName(String lastName);
 
     void saveStudent(Student Student);
 

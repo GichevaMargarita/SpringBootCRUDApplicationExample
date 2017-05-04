@@ -21,7 +21,7 @@ angular.module('crudApp').factory('StudentService',
             function loadAllStudents() {
                 console.log('Fetching all students');
                 var deferred = $q.defer();
-                $http.get(urls.USER_SERVICE_API)
+                $http.get(urls.STUDENT_SERVICE_API)
                     .then(
                         function (response) {
                             console.log('Fetched successfully all students');
@@ -43,7 +43,7 @@ angular.module('crudApp').factory('StudentService',
             function getStudent(id) {
                 console.log('Fetching Student with id :'+id);
                 var deferred = $q.defer();
-                $http.get(urls.USER_SERVICE_API + id)
+                $http.get(urls.STUDENT_SERVICE_API + id)
                     .then(
                         function (response) {
                             console.log('Fetched successfully Student with id :'+id);
@@ -60,7 +60,7 @@ angular.module('crudApp').factory('StudentService',
             function createStudent(student) {
                 console.log('Creating Student');
                 var deferred = $q.defer();
-                $http.post(urls.USER_SERVICE_API, student)
+                $http.post(urls.STUDENT_SERVICE_API, student)
                     .then(
                         function (response) {
                             loadAllStudents();
@@ -77,7 +77,7 @@ angular.module('crudApp').factory('StudentService',
             function updateStudent(student, id) {
                 console.log('Updating Student with id '+id);
                 var deferred = $q.defer();
-                $http.put(urls.USER_SERVICE_API + id, student)
+                $http.put(urls.STUDENT_SERVICE_API + id, student)
                     .then(
                         function (response) {
                             loadAllStudents();
@@ -94,7 +94,7 @@ angular.module('crudApp').factory('StudentService',
             function removeStudent(id) {
                 console.log('Removing Student with id '+id);
                 var deferred = $q.defer();
-                $http.delete(urls.USER_SERVICE_API + id)
+                $http.delete(urls.STUDENT_SERVICE_API + id)
                     .then(
                         function (response) {
                             loadAllStudents();
