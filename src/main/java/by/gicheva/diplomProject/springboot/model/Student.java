@@ -22,7 +22,7 @@ public class Student implements Serializable {
     private String name;
     @NotEmpty
     @Column(name="studentIdGroup", nullable=false)
-    private int idGroup;
+    private Integer idGroup;
 
     public int getId() {
         return id;

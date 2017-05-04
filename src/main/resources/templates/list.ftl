@@ -12,16 +12,16 @@
                         <div class="form-group col-md-12">
                             <label class="col-md-2 control-lable" for="ufname">First Name</label>
                             <div class="col-md-7">
-                                <input type="text" ng-model="ctrl.student.name" id="unfame" class="studentname form-control input-sm" placeholder="Enter first name" required ng-minlength="3"/>
+                                <input type="text" ng-model="ctrl.student.firstName" id="ufname" class="studentname form-control input-sm" placeholder="Enter first name" required ng-minlength="3"/>
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label class="col-md-2 control-lable" for="ulname">Last Name</label>
+                            <label class="col-md-2 control-lable" for="uname">Last Name</label>
                             <div class="col-md-7">
-                                <input type="text" ng-model="ctrl.user.age" id="ulname" class="form-control input-sm" placeholder="Enter last name." required ng-minlength="3"/>
+                                <input type="text" ng-model="ctrl.student.name" id="uname" class="form-control input-sm" placeholder="Enter last name." required ng-minlength="3"/>
                             </div>
                         </div>
                     </div>
@@ -30,14 +30,14 @@
                         <div class="form-group col-md-12">
                             <label class="col-md-2 control-lable" for="group">Group</label>
                             <div class="col-md-7">
-                                <input type="text" ng-model="ctrl.user.salary" id="group" class="form-control input-sm" placeholder="Enter group." required ng-pattern="ctrl.onlyIntegers"/>
+                                <input type="text" ng-model="ctrl.student.idGroup" id="group" class="form-control input-sm" placeholder="Enter group." required/>
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="form-actions floatRight">
-                            <input type="submit"  value="{{!ctrl.user.id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid || myForm.$pristine">
+                            <input type="submit"  value="{{!ctrl.student.id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid || myForm.$pristine">
                             <button type="button" ng-click="ctrl.reset()" class="btn btn-warning btn-sm" ng-disabled="myForm.$pristine">Reset Form</button>
                         </div>
                     </div>
@@ -54,7 +54,6 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>NAME</th>
                         <th>FIRST NAME</th>
                         <th>LAST NAME</th>
                         <th>GROUP</th>
@@ -66,7 +65,7 @@
                     <tr ng-repeat="u in ctrl.getAllStudents()">
                         <td>{{u.id}}</td>
                         <td>{{u.firstName}}</td>
-                        <td>{{u.lastName}}</td>
+                        <td>{{u.name}}</td>
                         <td>{{u.idGroup}}</td>
                         <td><button type="button" ng-click="ctrl.editStudent(u.id)" class="btn btn-success custom-width">Edit</button></td>
                         <td><button type="button" ng-click="ctrl.removeStudent(u.id)" class="btn btn-danger custom-width">Remove</button></td>
